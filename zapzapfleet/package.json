@@ -1,0 +1,30 @@
+{
+  "name": "zapzapfleet",
+  "version": "1.0.0",
+  "description": "EV Fleet Management",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "hello-world": "node ./src/examples/hello-world.js",
+    "test": "mocha ./src/**/*.spec.js",
+
+    "task1": "node ./src/utilities/runner.js ../tasks/task1 run",
+    "tests-task1": "mocha ./src/tasks/tests/task1.spec.js",
+
+    "task2": "node ./src/utilities/runner.js ../tasks/task2 run",
+    "tests-task2": "mocha ./src/tasks/tests/task2.spec.js",
+
+    "task3": "node ./src/utilities/runner.js ../tasks/task3 run"
+  },
+  "author": "lachlan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongodb": "^6.7.0"
+  },
+  "devDependencies": {
+    "chai": "^5.1.1",
+    "mocha": "^10.5.2"
+  }
+
+}
