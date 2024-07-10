@@ -14,7 +14,8 @@
     "task2": "node ./src/utilities/runner.js ../tasks/task2 run",
     "tests-task2": "mocha ./src/tasks/tests/task2.spec.js",
 
-    "task3": "node ./src/utilities/runner.js ../tasks/task3 run"
+    "task3": "node ./src/utilities/runner.js ../tasks/task3 run",
+    "tests-task3": "mocha ./src/tasks/tests/task3.spec.js"
   },
   "author": "lachlan",
   "license": "ISC",

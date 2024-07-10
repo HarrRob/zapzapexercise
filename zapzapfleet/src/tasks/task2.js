@@ -1,7 +1,22 @@
 import { getAllVehiclesOfTypeCar } from '../utilities/repository.js'
 
 export function getVehicleMakeKPI(vehicles) {
-    return {};
+    var temp = {};
+    for(var x =0;x<vehicles.length;x++)
+    {
+        var tempMake;
+        tempMake = vehicles[x].make;
+        if(!temp[tempMake])
+        {
+            temp[tempMake] = 1;
+        }      
+        else
+        {
+            temp[tempMake]++;
+        }
+
+    }
+    return temp;
 }
 
 export async function run() {
