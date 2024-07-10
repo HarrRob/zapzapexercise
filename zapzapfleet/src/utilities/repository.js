@@ -1,3 +1,4 @@
+import { query } from 'express';
 import mongodb from 'mongodb'
 const uri = "mongodb://127.0.0.1:27017";
 const client = new mongodb.MongoClient(uri);
@@ -28,4 +29,34 @@ export async function getAllVehiclesOfType(type) {
     } finally {
         await client.close();
     }
+    
+}
+export async function getAllVehicleDataHistory(vehicle_id) {
+    try {
+        await client.connect();
+        // Get the database and collection on which to run the operation
+        const database = client.db(dbName);
+        const vehicle_repository = database.collection("vehicle_data_history");
+
+        // Query for all vehicles
+        var query;
+        if(!vehicle_id)
+        {
+         query = {};
+        }
+        else
+        {
+         query={vehicle_id:vehicle_id};
+        }
+        // Execute query
+        const vehicles_data_history = await vehicle_repository.find(query).toArray();
+
+        // Return found vehicles
+        return vehicles_data_history;
+    } catch (err) {
+        console.error(err.stack);
+    } finally {
+        await client.close();
+    }
+    
 }

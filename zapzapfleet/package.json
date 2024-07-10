@@ -15,7 +15,13 @@
     "tests-task2": "mocha ./src/tasks/tests/task2.spec.js",
 
     "task3": "node ./src/utilities/runner.js ../tasks/task3 run",
-    "tests-task3": "mocha ./src/tasks/tests/task3.spec.js"
+    "tests-task3": "mocha ./src/tasks/tests/task3.spec.js",
+
+    "task4": "node ./src/utilities/runner.js ../tasks/task4 run",
+    "tests-task4": "mocha ./src/tasks/tests/task4.spec.js",
+
+    "task5": "node ./src/utilities/runner.js ../tasks/task5 run",
+    "tests-task5": "mocha ./src/tasks/tests/task5.spec.js"
   },
   "author": "lachlan",
   "license": "ISC",
