@@ -24,5 +24,6 @@ app.post('/hello-world', (request, response) => {
 
 app.get('/vehicles', async (request, response) => {
   const vehicles = await getAllVehiclesOfType("CAR");
+  
   response.send(vehicles)
 })

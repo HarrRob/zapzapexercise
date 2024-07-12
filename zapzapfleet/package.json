@@ -5,7 +5,7 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "hello-world": "node ./src/examples/hello-world.js",
+    "hello-world": "node ./hello-world.js",
     "test": "mocha ./src/**/*.spec.js",
 
     "task1": "node ./src/utilities/runner.js ../tasks/task1 run",
@@ -21,7 +21,11 @@
     "tests-task4": "mocha ./src/tasks/tests/task4.spec.js",
 
     "task5": "node ./src/utilities/runner.js ../tasks/task5 run",
-    "tests-task5": "mocha ./src/tasks/tests/task5.spec.js"
+    "tests-task5": "mocha ./src/tasks/tests/task5.spec.js",
+
+    "task6": "node ./src/utilities/runner.js ../tasks/task6 run",
+    "tests-task6": "mocha ./src/tasks/tests/task6.spec.js"
+
   },
   "author": "lachlan",
   "license": "ISC",

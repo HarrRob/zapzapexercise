@@ -44,6 +44,7 @@ export async function run() {
             const id = vehicles[i]._id;
             const dataHistory = await getAllVehicleDataHistory(id);
             const batteryConsumption = await getBCR(dataHistory);
+            
 
         }
         

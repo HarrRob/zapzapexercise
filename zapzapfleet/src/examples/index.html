@@ -30,36 +30,73 @@
 </head>
 
 <body>
-    <h1>Data Table</h1>
+    <h1>ZapZapFleet </h1>
     <table>
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Registration</th>
+                <th>Battery Consumption</th>
+                <th>Average Speed</th>
+                <th>Overall Distance</th>
+                <th>Battery Percentage Remaining</th>
+                <th>Estimated Distance Remaining</th>
+
             </tr>
         </thead>
         <tbody id="data-table-body">
             <!-- Data will be populated here -->
         </tbody>
+        <button type="button" onclick="myFunction()">Registration</button>
+        <button type="button" onclick="makeVisible()">Registration</button>
     </table>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        function myFunction() {
             fetch('/vehicles')
                 .then(response => response.json())
                 .then(data => {
-                    const tableBody = document.getElementById('data-table-body');
+                    const tableBody = document.getElementById('data-table-body')                   
                     data.forEach(item => {
                         const row = document.createElement('tr');
+                        
+                        if (item.visible) {
                         row.innerHTML = `
-                        <td>${item._id}</td>
-                        <td>${item.registration}</td>
-                    `;
+                            <td>${item._id}</td>
+                            <td>${item.registration}</td>
+                            <td>${item.batteryConsumption}%/km</td>
+                            <td>${item.speed}km/h</td>
+                            <td>${item.overallDistance}km</td>
+                            <td>${item.batteryPercentageLeft}%</td>
+                            <td>${item.estimatedDistance}km</td>
+                           
+                        `;
+                    } else {
+                        row.style.color = 'red';
+                        row.innerHTML = `
+                            <td>${item._id}</td>
+                            <td>${item.registration}</td>
+                            <td>${item.batteryConsumption}%/km</td>
+                            <td>${item.speed}km/h</td>
+                            <td>${item.overallDistance}km</td>
+                            <td>${item.batteryPercentageLeft}%</td>
+                            <td>${item.estimatedDistance}km</td>
+                        `;
+                    }
                         tableBody.appendChild(row);
                     });
                 })
                 .catch(error => console.error('Error fetching data:', error));
-        });
+        }
     </script>
 </body>
+<button type="button" onclick="clickHandler()">Click Me!</button>
+
+    <script>
+        
+           function clickHandler() {
+             alert("something 123");
+           }
+       </script>
+
 
 </html>
